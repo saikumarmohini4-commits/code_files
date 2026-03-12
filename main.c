@@ -1,200 +1,351 @@
+
+
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <time.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <math.h>
-#include <stdbool.h>
-struct {
-    int hour;
-    int min;
-    int sec;
-}typedef TIME;
-
-union abc{
-    int a;
-    char b;
-    float c;
-    double d;
-}var;
-#define pi 3.1456
-int computer(void){
-    srand(time(0));
-    int num = rand() % 3 + 1;
-    switch(num){
-        case 1:
-            printf("Rock\n");
-            break;
-        case 2:
-            printf("Papers\n");
-            break;
-        case 3:
-            printf("scissors\n");
-            break;
-    }
-    return num;
-}
-int _user(int num){
-    printf("Enter num from 1 to 3:- ");
-    scanf(" %d",&num);
-    switch(num){
-        case 1:
-            printf("Rock\n");
-            break;
-        case 2:
-            printf("Papers\n");
-            break;
-        case 3:
-            printf("scissors\n");
-            break;
-        default:
-            printf("INVALId___\n");
-    }
-    return num;
-}
-
-int main(void) {
-    /*time_t rawtime = 0;
-     struct tm *pTime = NULL;
-     bool isRunning = true;
-     printf("DIGITAL CLOCK \n");
-     while(isRunning){
-     time(&rawtime);
-     pTime = localtime(&rawtime);
-     printf("\r %02d:%02d:%02d",pTime->tm_hour,pTime->tm_min,pTime->tm_sec);
-     sleep(1);*/
-    /*int num1;
-    int num2 = '\0';
-    char grades[5];
-    printf("Enter the Number of Bytes you want to allocate to grades:- ");
-    scanf(" %d",&num2);
-    printf("Enter the Number of grades:- ");
-    scanf("%d",&num1);
-    if(num1 > 0 && sizeof(grades) >= sizeof(num1)){
-        for(int i = 0; i < num1; i++){
-            printf("Enter Grade #%d:- ",i+1);
-            scanf(" %c",&grades[i]);
-        }
-        for(int i = 0; i < num1; i++){
-            printf("%c ",grades[i]);
-        }
-        printf("\n");
-        return 0;
-    }
-    else{
-        return 1;
-    }*/
-    /*int num1;
-    printf("Enter the Number of grades:- ");
-    scanf(" %d",&num1);
-    char *grades = calloc(num1,sizeof(char));
-    if(grades == NULL){
-        printf("Memory__NOT__Allocated!!!!\n");
-        return 1;
-    }
-    else{
-        for(int i = 0; i < num1; i++){
-            printf("Enter Grade #%d:- ",i+1);
-            scanf(" %c",&grades[i]);
-        }
-        for(int i = 0; i < num1; i++){
-            printf("%c ",grades[i]);
-        }
-        printf("\n");
-        return 0;
-    }
-    grades = NULL;
-    free(grades);*/
-    //char name[] = "SAIKUMAR";
-    //char name2[] = "saikumar";
-    //strncpy(name,name2,4);
-    //strcpy(name3,name2);
-    //strcat(name, name2);
-    //int result = strlen(name2);
-    /*if(result == 0){
-        printf("First three characters are equal\n");
-        printf("%d\n",result);
-    }
-    else if(result > 0){
-        printf("The str1 chacter is greater than the other\n");
-        printf("%d\n",result);
-    }
-    else{
-        printf("The str1 is lesser than str2\n");
-        printf("%d\n",result);
-    }*/
-   /* int age = 31;
-    int *pAge = &age;
-    printf("%p\n",pAge);
-    printf("%d\n",*pAge);*/
-    /*srand(time(0));
-    int num = (rand() % 3) + 1;
-    printf("%d",num);*/
-    //TIME time1 = {12,30,36};
-   // TIME *P = &time1;
-    //printf("%d\n",P->hour);
-    //var.a = 90;
-    //printf("a = %d\n",var.a);
-    /*union abc var;
-    var.a = 90;
-    union abc *p = &var;
-    printf("%d %c\n",p->a,p->b);*/
-    /*for(int i = 0; i < 6; i++){
-        printf("Enter the Radius of the circle:- ");
-        int radius;
-        scanf("%d",&radius);
-        float area = (pi * pow(radius,2));
-        printf("The Area of the circle is:- %.2f\n",area);
-    }*/
-    /*int a;
-    printf("Enter a Number:- ");
-    scanf(" %d",&a);
-    switch(a){
-        case 1:
-            printf("January\n");
-            break;
-        case 2:
-            printf("February\n");
-            break;
-        case 3:
-            printf("March\n");
-            break;
-        case 4:
-            printf("April\n");
-            break;
-        case 5:
-            printf("June\n");
-            break;
-        default:
-            printf("That's it\n");
-    }*/
-    
-        /*switch(i){
-            case 5:
-                printf("E");
-                break;
+struct node{
+    int data;
+    struct node *next;
+};
+void create_node(void);
+void create_node(void);
+void display(void);
+void Insert_Begn(void);
+void Insert_Betn(void);
+void Insert_End(void);
+void Delete_Begn(void);
+void Delete_Betn(void);
+void Delete_End(void);
+void Search(void);
+struct node *head = NULL;
+struct node *temp = NULL;
+int count = 0;
+int main(void)
+{
+    int choice = '\0';
+    printf("---------------- Linked Lists ------------------\n");
+    printf("Press 1 for creating a list\n");
+    printf("Press 2 for Displaying a list\n");
+    printf("Press 3 for Inserting a node\n");
+    printf("Press 4 for Deleting a node\n");
+    printf("Press 5 for searching a node\n");
+    printf("Press 6 for exit\n");
+    printf("------------------------------------------------\n");
+    while(choice != 6)
+    {
+        printf("Enter Your choice from the above:- ");
+        scanf(" %d",&choice);
+        switch(choice)
+        {
             case 1:
-                printf("A");
+                if(head == NULL)
+                {
+                    create_node();
+                }
+                else if(head != NULL)
+                {
+                    char op;
+                    printf("Trying to create new list will rewrite the previous data\n");
+                    printf("Are you Sure you want to continue(y/n):- ");
+                    scanf(" %c",&op);
+                    if(op == 'y' || op == 'Y')
+                    {
+                        create_node();
+                    }
+                    else
+                    {
+                        printf("Failed to create new list!\n");
+                    }
+                }
                 break;
-        }*/
-    printf("************************** ROCK PAPERS SCISSORS GAME ************************************\n");
-    printf("Enter 1 for paper\nEnter 2 for papers\nEnter 3 for scissors\n");
-    int scoreu = 0;
-    int scorec = 0;
-    int i = 3;
-    int num = '\0';
-    int a = _user(num);
-    int b = computer();
-    while(i > 1){
-        _user(num);
-        computer();
-        if(a == 1 && b == 2){scorec += 1;}
-        else if(a == 1 && b == 3){scoreu += 1;}
-        i = i - 1;
+            case 2:
+                display();
+                break;
+            case 3:
+            {
+                char opt[3];
+                printf("-if for insert at beginning , -im for insert at the middile , -il for insert at the end\n");
+                printf("Enter the command:- ");
+                scanf(" %s",opt);
+                if(strcmp(opt,"-if") == 0)
+                {
+                    Insert_Begn();
+                }
+                else if(strcmp(opt,"-im") == 0)
+                {
+                    Insert_Betn();
+                }
+                else if(strcmp(opt,"-il") == 0)
+                {
+                    Insert_End();
+                }
+                else
+                {
+                    printf("## Command not Found ##\n");
+                }
+                break;
+            }
+            case 4:
+            {
+                char opt2[3];
+                printf("-df for Delete at beginning , -dm for Delete at the middile , -dl for Delete at the end\n");
+                printf("Enter the command:- ");
+                scanf(" %s",opt2);
+                if(strcmp(opt2,"-df") == 0)
+                {
+                    Delete_Begn();
+                }
+                else if(strcmp(opt2,"-dm") == 0)
+                {
+                    Delete_Betn();
+                }
+                else if(strcmp(opt2,"-dl") == 0)
+                {
+                    Delete_End();
+                }
+                else
+                {
+                    printf("## Command not Found ##\n");
+                }
+                break;
+            }
+            case 5:
+                Search();
+                break;
+            case 6:
+                return 0;
+                break;
+            default:
+                printf("Invalid choice!\n");
+                exit(1);
+        }
     }
-    if(scoreu > scorec){printf("You won!!!\n");}
-    else if(scorec > scoreu){printf("Computer won!!\n");}
-    else{printf("Tie!!!\n");}
-    printf("********************************** Game End ************************************************\n");
-    return 0;
 }
+
+void create_node(void)
+{
+    head = malloc(sizeof(struct node));
+    temp = malloc(sizeof(struct node));
+    temp = head;
+    struct node *new = NULL;
+    int num = '\0';
+    printf("Enter the number:- ");
+    scanf(" %d",&num);
+    head->data = num;
+    head->next = NULL;
+    count++;
+    char op = '\0';
+    printf("want to add another node(y/n)?: ");
+    scanf(" %c",&op);
+    while(op == 'y' || op == 'Y')
+    {
+        new = malloc(sizeof(struct node));
+        printf("Enter the number:- ");
+        scanf(" %d",&num);
+        new->data = num;
+        temp->next = new;
+        temp = temp->next;
+        printf("want to continue(y/n)?: ");
+        scanf(" %c",&op);
+        count++;
+    }
+    temp = head;
+}
+
+void display(void)
+{
+    if(head == NULL)
+    {
+        printf("List is Empty!\n");
+    }
+    else
+    {
+        printf("%d ",temp->data);
+        while(temp->next != NULL)
+        {
+            temp = temp->next;
+            printf("%d ",temp->data);
+        }
+        printf("\n");
+        temp = head;
+    }
+}
+
+void Insert_Begn(void)
+{
+    temp = head;
+    int num;
+    struct node *new_h = NULL;
+    new_h = malloc(sizeof(struct node));
+    printf("Enter the number:- ");
+    scanf(" %d",&num);
+    new_h->data = num;
+    new_h->next = temp;
+    head = new_h;
+    printf("%d has been inserted at teh begining of the list!\n",new_h->data);
+    temp = head;
+    count++;
+}
+
+void Insert_Betn(void)
+{
+    temp = head;
+    int num,pos;
+    printf("Enter the Number:- ");
+    scanf(" %d",&num);
+    printf("Enter the Position:- ");
+    scanf(" %d",&pos);
+    if(pos > 1 && pos < count)
+    {
+        struct node *n = NULL;
+        struct node *temp2 = NULL;
+        temp2 = malloc(sizeof(struct node));
+        temp2 = temp;
+        n = malloc(sizeof(struct node));
+        n->data = num;
+        n->next = NULL;
+        int i = 1;
+        while(i != pos - 1)
+        {
+            temp = temp->next;
+            temp2 = temp2->next;
+            i++;
+        }
+        temp2 = temp2->next;
+        n->next = temp2;
+        temp->next = n;
+        printf("%d has been inserted!\n",n->data);
+        temp = head;
+        count++;
+    }
+    else
+    {
+        printf("Cannot Insert Data at the Begining or End!\n");
+    }
+}
+
+void Insert_End(void)
+{
+    temp = head;
+    struct node *new_e = NULL;
+    int num;
+    printf("Enter the Number:- ");
+    scanf(" %d",&num);
+    new_e = malloc(sizeof(struct node));
+    new_e->data = num;
+    new_e->next = NULL;
+    while(temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = new_e;
+    printf("%d has been inserted in the end of list!\n",new_e->data);
+    temp = head;
+    count++;
+}
+
+void Delete_Begn(void)
+{
+    if(head == NULL)
+    {
+        printf("List is Empty!\n");
+    }
+    else
+    {
+        temp = head;
+        printf("%d has has been deleted!\n",head->data);
+        head = head->next;
+        free(temp);
+        temp = head;
+        count--;
+    }
+}
+
+void Delete_Betn(void)
+{
+    if(head == NULL)
+    {
+        printf("List is Empty!\n");
+    }
+    else
+    {
+        temp = head;
+        int pos;
+        printf("Enter the position:- ");
+        scanf(" %d",&pos);
+        if(pos > 1 && pos < count)
+        {
+            int i = 1;
+            while(i != pos - 1)
+            {
+                temp = temp->next;
+                i++;
+            }
+            printf("%d has been deleted!\n",temp->next->data);
+            temp->next = temp->next->next;
+            temp = head;
+            count--;
+        }
+        else
+        {
+            printf("This Function could only Delete element between pos 1 and %d!\n",count);
+        }
+    }
+}
+
+void Delete_End(void)
+{
+    if(head == NULL)
+    {
+        printf("List is Empty!\n");
+    }
+    else
+    {
+        temp = head;
+        while(temp->next->next != NULL)
+        {
+            temp = temp->next;
+        }
+        printf("%d has been deleted!\n",temp->next->data);
+        temp->next = NULL;
+        temp = head;
+        count--;
+    }
+}
+
+void Search(void)
+{
+    if(head == NULL)
+    {
+        printf("List is Empty!\n");
+    }
+    else
+    {
+        temp = head;
+        int num,found = 0,i = 1;
+        printf("Enter the Number:- ");
+        scanf(" %d",&num);
+        while(temp->next != NULL)
+        {
+            if(temp->data == num)
+            {
+                printf("Position:- %d,Number:-%d\n",i,temp->data);
+                found = 1;
+                break;
+            }
+            else
+            {
+                temp = temp->next;
+                i++;
+            }
+        }
+        if(found == 0)
+        {
+            printf("The Number %d does not exist in the list!\n",num);
+        }
+        temp = head;
+    }
+}
+
+
+
