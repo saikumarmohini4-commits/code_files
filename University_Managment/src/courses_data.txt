@@ -1,0 +1,8 @@
+IN1001,Introduction to Java Programming,4,BroCode,100,2601,
+DA1002,Data Structures and Algorithms,4,BroCode,100,2601,
+CI2001,Circuit Theory and Analysis,4,null,200,
+DI2002,Digital Logic and Logic design,3,null,200,
+EN3001,Engineering Mechanics and Statics,3,StudyIQ,300,
+TH3002,Thermodynamics and Heat Transfer,4,null,300,
+PR4001,Principles of Management,3,Joyace,400,10403,10402,
+OR4002,Organisational Behaviour,2,null,400,10401,

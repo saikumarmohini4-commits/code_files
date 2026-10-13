@@ -1,0 +1,8 @@
+2601,Saikumar,saikumarmohini4@gmail.com,BS-Computer_Science,IN1001,90.0,A,DA1002,87.56,A,
+5201,Akira,something49@gmail.com,Electrical & Electronics Engineering
+10401,Natraj,natraj67@gmail.com,Business Administration
+10402,Bhuvan,bhuvan@gmail.com,Business Administration
+10403,Aryan,AryanRk@gmail.com,Business Administration
+2602,someone,someone@gmail.com,BS-Computer_Science
+5202,someone2,someone2@gmail.com,Electrical & Electronics Engineering
+5203,Rajkumar,RajKumar001@gmail.com,Electrical & Electronics Engineering

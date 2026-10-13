@@ -1,0 +1,5 @@
+201,Uknown_lecturer,unknown@gmail.com,Electrical & Electronics Engineering
+101,Unknown_lecturer2,unknownfk_2@gmail.com,BS-Computer_Science
+401,Joyace,madwomen@gmail.com,Business Administration,PR4001,Principles of Management,3,400,
+102,BroCode,brocodeGreat@gmail.com,BS-Computer_Science,IN1001,Introduction to Java Programming,4,100,DA1002,Data Structures and Algorithms,4,100,
+301,StudyIQ,StudyIQnews@gmail.com,Mechanical Engineering,EN3001,Engineering Mechanics and Statics,3,300,
